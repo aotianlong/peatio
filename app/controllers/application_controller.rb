@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
 
   include TwoFactorHelper
 
+  def env
+    request.env
+  end
+
   def currency
     "#{params[:ask]}#{params[:bid]}".to_sym
   end

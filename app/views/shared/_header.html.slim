@@ -12,4 +12,4 @@ header.navbar.navbar-default.navbar-static-top role = "navigation"
       = render partial: 'shared/header_profile_setting' if current_user
       = top_nav_link(t('header.signin'), signin_path, '') unless current_user
       = top_nav_link(t('header.signup'), signup_path, '') unless current_user
-      = render partial: 'shared/header_lang_sel'
+      //= render partial: 'shared/header_lang_sel'

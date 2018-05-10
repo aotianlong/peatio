@@ -1,4 +1,10 @@
 module ApplicationHelper
+
+
+  def available_locales
+    Rails.configuration.i18n.available_locales || []
+  end
+
   def document_to(key: nil, title: nil, &block)
     if title
       link_to(title, '', :data => {:remote => "#{main_app.document_path(key)}", :toggle => "modal", :target => '#document_modal'})

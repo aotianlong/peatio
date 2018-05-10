@@ -44,6 +44,7 @@ gem 'eventmachine'
 gem 'em-websocket'
 
 gem 'simple_form'
+gem 'simple_form_extension'
 gem 'slim-rails'
 gem 'sass-rails'
 gem 'coffee-rails'

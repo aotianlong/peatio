@@ -161,3 +161,20 @@ SimpleForm.setup do |config|
   # Default class for inputs
   config.input_class = 'form-control'
 end
+
+
+SimpleForm::FormBuilder.class_eval do
+  def wrapped(*args,&block)
+    options = args.extract_options!
+    name = args.first
+    %Q{
+    <div class="form-group">
+      <div class="col-xs-8"></div>
+      <div class="col-xs-14">
+        <input type='submit' value='#{name}' class="btn btn-primary">
+        <a href="#{options[:cancel]}" class="btn btn-default">取消</a>
+      </div>
+    </div>
+    }.html_safe
+  end
+end
