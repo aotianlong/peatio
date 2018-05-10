@@ -10,7 +10,7 @@ module APIv2
     params do
       use :auth
       optional :currency, type: String, values: Currency.all.map(&:code), desc: "Currency value contains  #{Currency.all.map(&:code).join(',')}"
-      optional :limit, type: Integer, range: 1..100, default: 3, desc: "Set result limit."
+      #optional :limit, type: Integer, range: 1..100, default: 3, desc: "Set result limit."
       optional :state, type: String, values: Deposit::STATES.map(&:to_s)
     end
     get "/deposits" do

@@ -6,10 +6,9 @@ class Withdraw < ActiveRecord::Base
   extend Enumerize
 
   include AASM
-  include AASM::Locking
   include Currencible
 
-  has_paper_trail on: [:update, :destroy]
+  # has_paper_trail on: [:update, :destroy]
 
   enumerize :aasm_state, in: STATES, scope: true
 

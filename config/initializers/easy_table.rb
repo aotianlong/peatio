@@ -1,3 +1,4 @@
+=begin
 module EasyTable
   module Components
     module Columns
@@ -34,3 +35,4 @@ module EasyTable
   end
 end
 
+=end

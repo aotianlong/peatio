@@ -1,7 +1,7 @@
 module Statistic
   class DepositsGrid
     include Datagrid
-    include Datagrid::Naming
+    #include Datagrid::Naming
     include Datagrid::ColumnI18n
 
     scope do

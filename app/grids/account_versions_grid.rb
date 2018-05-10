@@ -1,7 +1,7 @@
 class AccountVersionsGrid
   include Datagrid
-  include Datagrid::Naming
-  include Datagrid::ColumnI18n
+  #include Datagrid::Naming
+  #include Datagrid::ColumnI18n
 
   scope do |m|
     AccountVersion.order("id DESC")

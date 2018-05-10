@@ -37,16 +37,3 @@ SimpleForm.setup do |config|
     end
   end
 end
-
-module SimpleForm
-  module ActionViewExtensions
-    module FormHelper
-      def simple_form_for_with_default_class(record, options = {}, &block)
-        options[:html] ||= {}
-        options[:html][:class] ||= 'form-horizontal'
-        simple_form_for_without_default_class(record, options, &block)
-      end
-      alias_method_chain :simple_form_for, :default_class
-    end
-  end
-end

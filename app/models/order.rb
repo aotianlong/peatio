@@ -18,9 +18,9 @@ class Order < ActiveRecord::Base
   validates_presence_of :ord_type, :volume, :origin_volume, :locked, :origin_locked
   validates_numericality_of :origin_volume, :greater_than => 0
 
-  validates_numericality_of :price, greater_than: 0, allow_nil: false,
-    if: "ord_type == 'limit'"
-  validate :market_order_validations, if: "ord_type == 'market'"
+  #validates_numericality_of :price, greater_than: 0, allow_nil: false,
+  #  if: "ord_type == 'limit'"
+  #validate :market_order_validations, if: "ord_type == 'market'"
 
   WAIT = 'wait'
   DONE = 'done'

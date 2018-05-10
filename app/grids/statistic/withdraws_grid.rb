@@ -1,7 +1,7 @@
 module Statistic
   class WithdrawsGrid
     include Datagrid
-    include Datagrid::Naming
+    #include Datagrid::Naming
     include Datagrid::ColumnI18n
 
     scope do

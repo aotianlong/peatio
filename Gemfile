@@ -6,9 +6,11 @@ gem 'rails-i18n'
 gem 'mysql2'
 gem 'daemons-rails'
 gem 'redis-rails'
+gem "bootsnap"
 
 gem 'rotp'
 gem 'json'
+gem 'listen'
 gem 'jbuilder'
 gem 'bcrypt-ruby'
 
