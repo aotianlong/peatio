@@ -166,7 +166,7 @@ end
 SimpleForm::FormBuilder.class_eval do
   def wrapped(*args,&block)
     options = args.extract_options!
-    name = args.first
+    name = args.first || "提交"
     %Q{
     <div class="form-group">
       <div class="col-xs-8"></div>

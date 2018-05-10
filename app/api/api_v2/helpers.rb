@@ -1,3 +1,4 @@
+require "kline_db"
 module APIv2
   module Helpers
 
@@ -6,7 +7,7 @@ module APIv2
     end
 
     def redis
-      @r ||= KlineDB.redis
+      @r ||= ::KlineDB.redis
     end
 
     def current_user
