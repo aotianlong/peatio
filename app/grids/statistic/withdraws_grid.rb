@@ -1,8 +1,6 @@
 module Statistic
   class WithdrawsGrid
     include Datagrid
-    #include Datagrid::Naming
-    include Datagrid::ColumnI18n
 
     scope do
       Withdraw.includes(:account).order(id: :desc)
@@ -27,7 +25,6 @@ module Statistic
     column(:address) do
       self.address.mask
     end
-    column_localtime :created_at
     column(:aasm_state_text)
   end
 end

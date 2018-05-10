@@ -1,7 +1,6 @@
 class IdDocument < ActiveRecord::Base
   extend Enumerize
   include AASM
-  include AASM::Locking
 
   has_one :id_document_file, class_name: 'Asset::IdDocumentFile', as: :attachable
   accepts_nested_attributes_for :id_document_file

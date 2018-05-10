@@ -1,8 +1,6 @@
 module Statistic
   class OrdersGrid
     include Datagrid
-    include Datagrid::Naming
-    include Datagrid::ColumnI18n
 
     scope do
       Order.order('created_at DESC')
@@ -27,7 +25,6 @@ module Statistic
         "#{o.volume} / #{o.origin_volume}"
       end
     end
-    column_localtime :created_at
     column(:state_text)
   end
 end

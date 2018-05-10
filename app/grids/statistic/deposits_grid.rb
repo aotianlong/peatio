@@ -1,8 +1,6 @@
 module Statistic
   class DepositsGrid
     include Datagrid
-    #include Datagrid::Naming
-    include Datagrid::ColumnI18n
 
     scope do
       Deposit.includes(:account).order('created_at DESC')
@@ -23,7 +21,6 @@ module Statistic
     column(:txid) do |deposit|
       deposit.txid
     end
-    column_localtime :created_at
     column(:aasm_state_text)
   end
 end

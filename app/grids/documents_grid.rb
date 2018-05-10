@@ -1,7 +1,5 @@
 class DocumentsGrid
   include Datagrid
-  #include Datagrid::Naming
-  include Datagrid::ColumnI18n
 
   scope do |m|
     Document

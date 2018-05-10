@@ -1,6 +1,5 @@
 class Ticket < ActiveRecord::Base
   include AASM
-  include AASM::Locking
   acts_as_readable on: :created_at
 
   after_commit :send_notification, on: [:create]

@@ -1,8 +1,6 @@
 module Statistic
   class TradesGrid
     include Datagrid
-    #include Datagrid::Naming
-    include Datagrid::ColumnI18n
 
     scope do
       Trade.order('created_at DESC')
@@ -17,6 +15,5 @@ module Statistic
     column(:price)
     column(:volume)
     column(:strike_amount) { price * volume }
-    column_localtime :created_at
   end
 end

@@ -6,6 +6,8 @@ class ActionDispatch::Routing::Mapper
   end
 end
 
+require Rails.root.join("lib","market_constraint").to_s
+
 Peatio::Application.routes.draw do
   use_doorkeeper
 

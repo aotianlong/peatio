@@ -2,7 +2,6 @@ class PaymentTransaction < ActiveRecord::Base
   extend Enumerize
 
   include AASM
-  include AASM::Locking
   include Currencible
 
   STATE = [:unconfirm, :confirming, :confirmed]
