@@ -1,49 +1,30 @@
-require File.expand_path('../boot', __FILE__)
+require_relative 'boot'
 
+require "rails"
 # Pick the frameworks you want:
+require "active_model/railtie"
+require "active_job/railtie"
 require "active_record/railtie"
+require "active_storage/engine"
 require "action_controller/railtie"
 require "action_mailer/railtie"
+require "action_view/railtie"
+# require "action_cable/engine"
 require "sprockets/railtie"
-# require "rails/test_unit/railtie"
+require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env)
+Bundler.require(*Rails.groups)
 
 module Peatio
   class Application < Rails::Application
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 5.0
+
     # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
-
-    # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
-    # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    # config.time_zone = 'Central Time (US & Canada)'
-
-    config.i18n.enforce_available_locales = false
-
-    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'custom', '*.{yml}')]
-    config.i18n.available_locales = ['en', 'zh-CN', 'ko']
-
-    config.autoload_paths += %W(#{config.root}/lib #{config.root}/lib/extras)
-
-    #config.assets.precompile += ['bootstrap-datetimepicker.css']
-    config.assets.initialize_on_precompile = true
-
-    # Precompile all available locales
-    Dir.glob("#{config.root}/app/assets/javascripts/locales/*.js.erb").each do |file|
-      config.assets.precompile << "locales/#{file.match(/([a-z\-A-Z]+\.js)\.erb$/)[1]}"
-    end
-
-    config.generators do |g|
-      g.orm             :active_record
-      g.template_engine :erb
-      g.stylesheets     false
-    end
-
-    # Observer configuration
-    config.active_record.observers = :transfer_observer
+    # Application configuration can go into files in config/initializers
+    # -- all .rb files in that directory are automatically loaded after loading
+    # the framework and any gems in your application.
   end
 end
